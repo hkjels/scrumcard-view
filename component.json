@@ -2,7 +2,7 @@
   "name": "scrumcard",
   "description": "Scrumcard view-component",
   "author": "Henrik Kjelsberg",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "repo": "hkjels/scrumcard",
   "scripts": ["index.js"],
   "styles": ["style.css"],
@@ -11,6 +11,6 @@
     "component/domify": "*",
     "component/emitter": "*",
     "component/view": "*",
-    "hkjels/task-model": "0.0.2"
+    "hkjels/task-model": "*"
   }
 }
