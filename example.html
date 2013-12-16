@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Scrumcard</title>
+    <link rel="stylesheet" href="./build/build.css" />
+    <style>
+      html {
+        background-color: gainsboro;
+        font-family: Helvetica;
+        padding: 24px;
+      }
+      .scrumcard {
+        border-radius: 4px;
+      }
+        .scrumcard .assignee-photo {
+          border-radius: 50px;
+        }
+        .scrumcard.priority-low {
+          background-color: rgb(97, 184, 145);
+          border-color: rgb(80, 184, 130);
+        }
+        .scrumcard.priority-high {
+          background-color: rgb(204, 73, 65);
+          border-color: rgb(204, 60, 40);
+        }
+    </style>
+  </head>
+  <body>
+    <script src="./build/build.js"></script>
+    <script>
+
+      var Scrumcard = require('scrumcard')
+        , Task = require('task-model');
+
+      var task = new Task({
+        'id': 1,
+        'title': 'Move lawn',
+        'assignee': 'Henrik Kjelsberg',
+        'priority': 'high',
+        'email': 'hkjels@me.com',
+        'estimate': 3
+      });
+
+      var task2 = new Task({
+        'id': 2,
+        'title': 'Read a book',
+        'assignee': 'Henrik Kjelsberg',
+        'email': 'hkjels@me.com',
+        'priority': 'low',
+        'estimate': 3
+      });
+
+      var scrumcard = new Scrumcard(task);
+      var scrumcard2 = new Scrumcard(task2);
+      document.body.appendChild(scrumcard.el);
+      document.body.appendChild(scrumcard2.el);
+
+    </script>
+  </body>
+</html>
